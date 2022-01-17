@@ -31,6 +31,7 @@ export default async function Handle(req, res) {
     await user.save();
     res.status(200).json({ condition: true });
   } catch (err) {
+    console.log(err);
     res.status(200).json({ condition: false });
   }
 }
