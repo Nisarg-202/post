@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://localhost:27017/postDB");
+mongoose.connect(
+  `mongodb+srv://motorcycleparking:${process.env.MONGOOSE_PASSWORD}@motorcycleparking.5ihoj.mongodb.net/postDB`
+);
 
 const userSchema = new mongoose.Schema({
   email: {
