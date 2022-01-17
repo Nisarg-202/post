@@ -1,0 +1,12 @@
+.imageStyle {
+    border-radius: 100%;
+}
+
+.ImageContainerStyle {
+    background-color: grey;
+    padding: 20px;
+}
+
+.ImageContainer {
+    margin-top: 20px;
+}
