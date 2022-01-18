@@ -1,4 +1,5 @@
 import Image from "next/image";
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import postContext from "../../store/posts";
 import Navbar from "../../components/Navbar";
@@ -8,6 +9,17 @@ export default function AllPostId(props) {
   const [post, setPost] = useState();
   useEffect(function () {
     setPost(posts[props.id - 1]);
+  }, []);
+  useEffect(function () {
+    async function checkAuth() {
+      const token = sessionStorage.getItem("TOKEN");
+      const response = await axios.post("/api/checkAuth", { token });
+      if (!response.data.condition) {
+        window.location.href = "/";
+      }
+    }
+
+    checkAuth();
   }, []);
   if (post) {
     return (

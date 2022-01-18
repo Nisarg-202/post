@@ -1,28 +1,4 @@
-import mongoose from "mongoose";
-
-mongoose.connect(
-  `mongodb+srv://motorcycleparking:${process.env.MONGOOSE_PASSWORD}@motorcycleparking.5ihoj.mongodb.net/postDB`
-);
-
-const userSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-});
-
-let User;
-
-try {
-  User = mongoose.model("User");
-} catch (err) {
-  User = mongoose.model("User", userSchema);
-}
+import { User } from "../../db/db";
 
 export default async function Handle(req, res) {
   try {
