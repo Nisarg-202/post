@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 mongoose.connect(
-  `mongodb+srv://motorcycleparking:${process.env.MONGOOSE_PASSWORD}@motorcycleparking.5ihoj.mongodb.net/postDB`
+  `mongodb+srv://nisarg:${process.env.MONGOOSE_PASSWORD}@cluster0.x2a77.mongodb.net/postDB`
 );
 
 const userSchema = new mongoose.Schema({
